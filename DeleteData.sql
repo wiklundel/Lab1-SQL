@@ -1,2 +1,2 @@
-DELETE FROM [Tble_Person]
+DELETE FROM [Tbl_Person]
 WHERE [PersonID] = 4;
