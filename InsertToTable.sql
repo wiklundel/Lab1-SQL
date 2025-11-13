@@ -1,10 +1,10 @@
 INSERT INTO [Tbl_Dish] (dish_name)
 VALUES
-    ('Spaghetti Bolognese'),
     ('Chicken Alfredo'),
     ('Caesar Salad'),
     ('Tacos'),
-    ('Vegetable Stir Fry');
+    ('Vegetable Stir Fry'),
+    ('Pasta Bolognese');
 
 INSERT INTO [Tbl_Person] (first_name, last_name, age, dish_id)
 VALUES  
@@ -13,3 +13,11 @@ VALUES
     ('Emily', 'Johnson', 22, 4),
     ('Michael', 'Brown', 45, 2),
     ('Sarah', 'Davis', 30, 5);
+
+INSERT INTO [Tbl_PersonDish] (dish_id, person_id)
+VALUES
+    (2, 1),
+    (3, 2),
+    (4, 3),
+    (2, 4),
+    (5, 5);

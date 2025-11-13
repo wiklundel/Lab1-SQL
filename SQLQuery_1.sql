@@ -13,10 +13,18 @@ CREATE TABLE [Tbl_Person] (
     age             INT CHECK (age>= 0),
     dish_id         INT NOT NULL,
 
-    CONSTRAINT [PK_Tbl_Person] PRIMARY KEY ([person_id]),
-    CONSTRAINT [FK_Person_Dish]
+    CONSTRAINT [PK_Tbl_Person] PRIMARY KEY ([person_id])
+);
+
+CREATE TABLE [Tbl_PersonDish] (
+    has_dish_id INT IDENTITY (1,1) NOT NULL PRIMARY KEY,
+    dish_id     INT NOT NULL,
+    person_id   INT NOT NULL,
+
+    CONSTRAINT [FK_Tbl_PersonDish_Tbl_Dish]
         FOREIGN KEY ([dish_id])
-        REFERENCES [Tbl_Dish] (dish_id)
-        ON DELETE NO ACTION
-        ON UPDATE CASCADE
+        REFERENCES [Tbl_Dish] ([dish_id]),
+    CONSTRAINT [FK_Tbl_PersonDish_Tbl_Person]
+        FOREIGN KEY ([person_id])
+        REFERENCES [Tbl_Person] ([person_id])
 );
